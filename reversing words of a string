@@ -1,0 +1,38 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+        int start =0 ;
+        int n = s.length();
+        string ans;
+    while(start<n)
+    {
+
+    
+        while(start<n && s[start]==' ')
+        {
+            start++;
+        }
+        if(start>=n)
+        {
+            break;
+        }
+        int j = start+1;
+        while(j<n && s[j]!=' ')
+        {
+            j++;
+        }
+        
+        if(ans=="")
+        {
+            ans += s.substr(start,j-start);
+        }
+        else
+        {
+            ans =s.substr(start,j-start)+ " "+ans;
+        }
+        start= j+1;
+    }
+    return ans;
+
+    }
+};
