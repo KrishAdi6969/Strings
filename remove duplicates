@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<unordered_map>
+#include<string>
+using namespace std;
+string rem(string &s)
+{
+    int n = s.length();
+    unordered_map<char,int>mp;
+    string ans;
+    for(int i=0;i<n;i++)
+    {
+        if(mp[s[i]]<1)
+        {
+            ans = ans + s[i];
+        }
+        mp[s[i]]++;
+        
+    }
+    return ans;
+}
+int main() {
+    // Write C++ code here
+    string s = "hellohe";
+    string s1=rem(s);
+    cout<<s1;
+    
+
+    return 0;
+}
