@@ -1,0 +1,29 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<string>
+using namespace std;
+bool onlydigits(string s)
+{
+    int n = s.length();
+    for(int i=0;i<n;i++)
+    {
+        if(s[i]>='0' and s[i]<='9')
+        {
+            continue;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
+}
+int main() {
+    // Write C++ code here
+    string s = "hello123";
+    string s1="12345";
+    bool ans1 = onlydigits(s);
+    cout<<ans1;
+
+    
+}
