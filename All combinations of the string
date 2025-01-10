@@ -1,0 +1,42 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<unordered_map>
+#include<vector>
+#include<string>
+#include <algorithm>
+using namespace std;
+void allcombinations(vector<string>&ans,string s,int index)
+{
+    if(index == s.length())
+    {
+        if(find(ans.begin(),ans.end(),s)==ans.end())
+        {
+            ans.push_back(s);
+            
+        }
+        return;
+        
+    }
+    for(int i=0;i<s.length();i++)
+    {
+        swap(s[index],s[i]);
+        allcombinations(ans,s,(index+1));
+        swap(s[index],s[i]);
+    }
+    return;
+}
+int main() {
+    // Write C++ code here
+    string s = "hello";
+    vector<string>ans;
+    allcombinations(ans,s,0);
+    for(int i=0;i<ans.size();i++)
+    {
+        cout<<ans[i]<<endl;
+    }
+    
+    
+    
+
+    return 0;
+}
