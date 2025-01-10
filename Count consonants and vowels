@@ -1,0 +1,39 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<string>
+#include<vector>
+using namespace std;
+vector<int> count(string s)
+{
+    int n = s.length();
+    int count_vowels =0;
+    int count_cons =0;
+    for(int i=0;i<n;i++)
+    {
+        if(s[i]=='a' || s[i]=='e'|| s[i]=='i'||s[i]=='o'|| s[i]=='u')
+        {
+            count_vowels++;
+        }
+        else
+        {
+            count_cons++;
+        }
+    }
+    
+    vector<int>ans;
+    ans.push_back(count_vowels);
+    ans.push_back(count_cons);
+    return ans;
+    
+}
+int main() {
+    // Write C++ code here
+    string s = "hiap";
+    vector<int>ans1 = count(s);
+    for(int i=0;i<ans1.size();i++)
+    {
+        cout<<ans1[i]<<" ";
+    }
+
+    
+}
